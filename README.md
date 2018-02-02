@@ -9,7 +9,24 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-#### Build
+## Stencil component code
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+```
+import { Component, Prop } from "@stencil/core";
 
+@Component({
+  tag: "my-button",
+  styleUrl: "my-button.scss"
+})
+export class MyButton {
+  @Prop() name: string;
+
+  render() {
+    return (
+      <div>
+        <p>I am the button: {this.name}</p>
+      </div>
+    );
+  }
+}
+```
